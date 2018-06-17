@@ -10,3 +10,17 @@ Example: for amount=4 (4¢) and denominations=[1,2,3] (1¢, 2¢ and 3¢), your p
 1¢, 3¢
 2¢, 2¢
 */
+
+const changePossibilities = (amount, denominations) => {
+	let outcomes = new Array(amount + 1).fill(0);
+	outcomes[0] = 1;
+	for (let coin of denominations) {
+		for (let i = coin; i <= amount; i++) {
+			const remainder = i - coin;
+			outcomes[i] += outcomes[remainder];
+		}
+	}
+	return outcomes[amount];
+};
+
+console.log(changePossibilities(4, [1, 2, 3]));
