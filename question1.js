@@ -2,6 +2,8 @@
 Question 1 -- sortByStrings(s,t): Sort the letters in the string s by the order they occur in the string t. You can assume t will not have repetitive characters. For s = "weather" and t = "therapyw", the output should be sortByString(s, t) = "theeraw". For s = "good" and t = "odg", the output should be sortByString(s, t) = "oodg".
 */
 
+//Assuming t has no repeating characters as stated in the question, and solving this in an efficient manner (avoiding nested for-loops):
+
 const sortByString = (s,t) => {
   let s_object = new Object();
   let output = new String();
